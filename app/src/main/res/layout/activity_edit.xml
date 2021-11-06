@@ -7,41 +7,86 @@
     android:layout_height="match_parent"
     tools:context=".EditActivity">
 
+    <Toolbar
+        android:id="@+id/talbar"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:background="#66D6EF">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit movie"
+            android:textSize="30sp"
+            android:textColor="@color/white"/>
+
+
+    </Toolbar>
+
 
     <EditText
         android:id="@+id/oti"
-        android:layout_width="wrap_content"
-        android:layout_margin="20sp"
-
+        android:layout_width="match_parent"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="20sp"
+        android:layout_marginEnd="20sp"
+        android:background="@drawable/edit_text_background"
         android:textSize="25sp"
-        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:paddingStart="15dp"
+        android:fontFamily="@font/roboto"
+        android:textColor="@color/black"
+        android:layout_height="51dp"
         android:hint="nomi"
         />
 
     <EditText
         android:id="@+id/teefi"
-        android:layout_width="wrap_content"
-        android:layout_margin="20sp"
+        android:layout_width="match_parent"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="20sp"
+        android:background="@drawable/edit_text_background"
+        android:layout_marginEnd="20sp"
+        android:fontFamily="@font/roboto"
+        android:textColor="@color/black"
         android:textSize="25sp"
-        android:layout_height="wrap_content"
+        android:paddingStart="15dp"
+        android:maxLines="1"
+        android:layout_height="51dp"
        android:hint="teli"
         />
 
     <EditText
         android:id="@+id/haqidasi"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_margin="20sp"
         android:textSize="25sp"
-        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:textColor="@color/black"
+        android:gravity="start"
+        android:paddingTop="6dp"
+        android:paddingStart="15sp"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="20sp"
+        android:maxLines="1"
+        android:background="@drawable/edit_text_background"
+        android:layout_marginEnd="20sp"
+        android:layout_height="212dp"
         android:hint="malumot"
         />
 
     <EditText
         android:id="@+id/datasi"
-        android:layout_width="wrap_content"
-        android:layout_margin="20sp"
+        android:layout_width="match_parent"
         android:textSize="25sp"
-        android:layout_height="wrap_content"
+        android:layout_height="51dp"
+        android:fontFamily="@font/roboto"
+        android:textColor="@color/black"
+        android:paddingStart="15dp"
+        android:maxLines="1"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="20sp"
+        android:background="@drawable/edit_text_background"
         android:hint="sanasi"
         />
 
@@ -50,6 +95,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Edit"
+        android:backgroundTint="#66D6EF"
+        android:layout_gravity="end"
         android:layout_margin="20sp"/>
 
 

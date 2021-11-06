@@ -26,17 +26,17 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        binding.next.setOnClickListener {
-            val intent = Intent(this@MainActivity, SecondActivity::class.java)
-            startActivity(intent)
-
-        }
-
-        binding.royhat.setOnClickListener {
-            val intent = Intent(this, ThirdActivity::class.java)
-            startActivity(intent)
-
-        }
+//        binding.next.setOnClickListener {
+//            val intent = Intent(this@MainActivity, SecondActivity::class.java)
+//            startActivity(intent)
+//
+//        }
+//
+//        binding.royhat.setOnClickListener {
+//            val intent = Intent(this, ThirdActivity::class.java)
+//            startActivity(intent)
+//
+//        }
 
 
 

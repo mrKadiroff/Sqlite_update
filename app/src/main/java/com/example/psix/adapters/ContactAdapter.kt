@@ -19,7 +19,7 @@ class ContactAdapter(var list: List<Contact>, var onItemClickListener: OnItemCli
         fun onBind(contact: Contact) {
             itemContactBinding.name.text = contact.name
             itemContactBinding.phone.text = contact.phoneNumber
-            itemContactBinding.malumotnoma.text = contact.descripter
+            
             itemContactBinding.date.text = contact.sana
 
             itemContactBinding.root.setOnClickListener {
@@ -30,6 +30,10 @@ class ContactAdapter(var list: List<Contact>, var onItemClickListener: OnItemCli
             }
             itemContactBinding.delete.setOnClickListener {
                 onItemClickListener.onItemDelete(contact, position, itemContactBinding.delete)
+            }
+
+            if (itemContactBinding.name.text.isEmpty()){
+                itemContactBinding.root.visibility = View.GONE
             }
 
         }

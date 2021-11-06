@@ -7,6 +7,7 @@ import android.widget.Toast
 import com.example.psix.databinding.ActivityMainBinding
 import com.example.psix.databinding.ActivitySecondBinding
 import com.example.psix.models.Contact
+import kotlinx.android.synthetic.main.activity_second.*
 
 
 class SecondActivity : AppCompatActivity() {
@@ -17,15 +18,37 @@ class SecondActivity : AppCompatActivity() {
 
 
         binding.save.setOnClickListener {
-            val name = binding.ism.text.toString()
-            val phone = binding.telRaqam.text.toString()
-            val descripter = binding.about.text.toString()
-            val sanamjon = binding.date.text.toString()
+            val name = binding.ism.text.toString().trim()
+            val phone = binding.telRaqam.text.toString().trim()
+            val descripter = binding.about.text.toString().trim()
+            val sanamjon = binding.date.text.toString().trim()
             val contact = Contact(name,phone,descripter,sanamjon)
 
-            if (name.isEmpty() || phone.isEmpty()){
-                Toast.makeText(this,"Malumotni to'liq kiriting okajon",Toast.LENGTH_SHORT).show()
-            }else {
+            if (name.isEmpty()){
+                binding.ism.error = "Kinoning nomi kiritilmadi"
+                binding.ism.requestFocus()
+                return@setOnClickListener
+            }
+
+            if (phone.isEmpty()){
+                binding.telRaqam.error = "Aktyorlarning nomi kiritilmadi"
+                binding.telRaqam.requestFocus()
+                return@setOnClickListener
+            }
+
+            if (descripter.isEmpty()){
+                binding.about.error = "Kino haqida malumot kiritilmadi"
+                binding.about.requestFocus()
+                return@setOnClickListener
+            }
+
+            if (sanamjon.isEmpty()){
+                binding.date.error = "Sana ma'lumotlari kiritilmadi"
+                binding.date.requestFocus()
+                return@setOnClickListener
+            }
+
+
                 val intent = Intent(this, ThirdActivity::class.java)
                 val bundle = Bundle()
 
@@ -33,10 +56,15 @@ class SecondActivity : AppCompatActivity() {
                 intent.putExtra("Bundle", bundle)
                 startActivity(intent)
                 finish()
-            }
+
 
 
         }
 
     }
+//    override fun onBackPressed() {
+//        val intent = Intent(this,ThirdActivity::class.java)
+//        startActivity(intent)
+//        finish()
+//    }
 }

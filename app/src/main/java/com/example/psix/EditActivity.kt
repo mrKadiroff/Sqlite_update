@@ -15,7 +15,6 @@ class EditActivity : AppCompatActivity() {
     lateinit var contactAdapter: ContactAdapter
     lateinit var myDbHelper: MyDbHelper
     lateinit var list: ArrayList<Contact>
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityEditBinding.inflate(layoutInflater)
@@ -23,6 +22,8 @@ class EditActivity : AppCompatActivity() {
 
         myDbHelper = MyDbHelper(this)
         list = myDbHelper.getAllContacts()
+
+
 
 
         val bundle = intent.getBundleExtra("Bundle")
@@ -41,10 +42,16 @@ class EditActivity : AppCompatActivity() {
             objecccc?.sana = binding.datasi.text.toString()
             myDbHelper.updateContact(objecccc!!)
 
+
+
             fun itemVr(contact: Contact, position: Int) {
                 list[position] = objecccc
                 contactAdapter.notifyItemChanged(position)
             }
+
+            val intent = Intent(this,ThirdActivity::class.java)
+            startActivity(intent)
+            finish()
 
         }
 
@@ -57,6 +64,12 @@ class EditActivity : AppCompatActivity() {
 
 
     }
+
+//    override fun onBackPressed() {
+//        val intent = Intent(this,ThirdActivity::class.java)
+//        startActivity(intent)
+//        finish()
+//    }
 
 
 

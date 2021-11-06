@@ -4,8 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AlertDialog
 import com.example.psix.adapters.ContactAdapter
 
@@ -14,6 +17,8 @@ import com.example.psix.databinding.ItemContactBinding
 import com.example.psix.databinding.MyDialogBinding
 import com.example.psix.db.MyDbHelper
 import com.example.psix.models.Contact
+import kotlinx.android.synthetic.main.activity_third.*
+import kotlin.system.exitProcess
 
 
 class ThirdActivity : AppCompatActivity() {
@@ -25,6 +30,10 @@ class ThirdActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding = ActivityThirdBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayShowHomeEnabled(false)
+        supportActionBar?.setTitle(0)
+
 
         myDbHelper = MyDbHelper(this)
 
@@ -37,7 +46,7 @@ class ThirdActivity : AppCompatActivity() {
                 bundle.putParcelable("key1", contact)
                 intent.putExtra("Bundle", bundle)
                 startActivity(intent)
-                finish()
+
             }
 
             override fun onItemClick(contact: Contact, position: Int, button: Button) {
@@ -50,7 +59,7 @@ class ThirdActivity : AppCompatActivity() {
                 bundle.putParcelable("key2", contact)
                 intent.putExtra("Bundle", bundle)
                 startActivity(intent)
-                finish()
+
 
             }
 
@@ -80,5 +89,27 @@ class ThirdActivity : AppCompatActivity() {
 
 
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.my_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val itemId = item.itemId
+
+        if (itemId == R.id.add){
+            val intent = Intent(this,SecondActivity::class.java)
+            startActivity(intent)
+
+        }
+        return false
+
+    }
+
+    override fun onBackPressed() {
+
+        finishAffinity()
     }
 }
