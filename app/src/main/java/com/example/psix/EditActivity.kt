@@ -44,11 +44,11 @@ class EditActivity : AppCompatActivity() {
 
 
 
-            fun itemVr(contact: Contact, position: Int) {
-                list[position] = objecccc
-                contactAdapter.notifyItemChanged(position)
-            }
-
+//            fun itemVr(contact: Contact, position: Int) {
+//                list[position] = objecccc
+//                contactAdapter.notifyItemChanged(position)
+//            }
+//
             val intent = Intent(this,ThirdActivity::class.java)
             startActivity(intent)
             finish()

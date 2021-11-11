@@ -108,6 +108,13 @@ class ThirdActivity : AppCompatActivity() {
 
     }
 
+    override fun onResume() {
+        super.onResume()
+        list.clear()
+        list.addAll(myDbHelper.getAllContacts())
+        contactAdapter.notifyDataSetChanged()
+    }
+
     override fun onBackPressed() {
 
         finishAffinity()

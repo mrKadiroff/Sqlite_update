@@ -34,8 +34,8 @@ class FourthActivity : AppCompatActivity() {
 
 
         binding.clossew.setOnClickListener {
-            val intent = Intent(this,ThirdActivity::class.java)
-            startActivity(intent)
+//            val intent = Intent(this,ThirdActivity::class.java)
+//            startActivity(intent)
             finish()
         }
 
